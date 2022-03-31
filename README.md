@@ -1,5 +1,5 @@
 # Introduction
-This is a pure JS/HTML/CSS implementation of Minesweeper, and includes all the features of regular (ye olde) minesweeper, including board size and mine count adjustment, flagging of mines, and accurate colors for adjacent mine counts.
+This is a pure JS/HTML/CSS implementation of Minesweeper, and includes all the features of regular (ye olde) minesweeper, including board size and mine count adjustment, flagging of mines, and accurate colors for adjacent mine counts. [Play the game!](https://rudi-engelke.github.io/minesweeper/)
 
 # How to play
 The objective of Minesweeper is to clear all the mines. The game board is a grid of blocks, whether the blocks may or may not have mines hidden in them. To play, enter a board size (X and Y) and a mine count, and click New Game.
