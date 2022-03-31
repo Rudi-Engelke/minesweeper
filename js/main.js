@@ -2,11 +2,15 @@ var xSize = 0;
 var ySize = 0;
 var numberOfMines = 0;
 var numberOfFlaggedMines = 0;
+var gameStarted = false;
+var timer = 0;
+var timerIntervalId = null;
 
 function onNewGameClicked() {
     var x = document.getElementById("xSizeInput").value
     var y = document.getElementById("ySizeInput").value
     var mines = document.getElementById("mineCountInput").value
+    document.getElementById("timer").innerText = timer;
     newGame(x, y, mines);
 };
 
@@ -15,6 +19,7 @@ function newGame(x, y, mines) {
     ySize = y;
     numberOfMines = mines;
     numberOfFlaggedMines = 0;
+    timer = 0;
     var table = document.getElementById("gameBoard");
     if (!table) {
         table = document.createElement("table");
@@ -49,9 +54,18 @@ function newGame(x, y, mines) {
     }
     var gamePanel = document.getElementById("gamePanel");
     gamePanel.appendChild(table);
+    timerIntervalId = setInterval(updateTimer, 1000);
 };
 
+function updateTimer() {
+    if (gameStarted == true) {
+        timer++;
+    }
+    document.getElementById("timer").innerText = timer;
+}
+
 function onMineButtonClicked(e) {
+    gameStarted = true;
     var mineButton = e.srcElement;
     if (e.ctrlKey) {
         mineButton.classList.toggle("flagged");
@@ -130,7 +144,7 @@ function checkBounds(x, y) {
     mineButton.disabled = true;
     mineButton.innerText = mineCount;
     setAdjacentStyle(mineButton, mineCount);
-    if (mineCount === 0) {
+    if (mineCount == 0) {
         //top left
         if (x > 0 && y > 0) {
             var buttonToCheck = getMineButton(x - 1, y - 1)
@@ -251,6 +265,8 @@ function checkEndConditions() {
 };
 
 function endGame(hasLost) {
+    clearInterval(timerIntervalId);
+    gameStarted = false;
     for (var x = 0; x < xSize; x++) {
         for (var y = 0; y < ySize; y++) {
             var mineButton = getMineButton(x, y);
