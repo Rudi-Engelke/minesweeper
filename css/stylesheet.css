@@ -1,0 +1,76 @@
+#game > div {
+    display: block;
+}
+
+#scorePanel > div {
+    display: inline-block
+}
+
+#gameBoard {
+    padding: 20px;
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+}
+
+#gameBoard > tr > td {
+    padding: 0px;
+}
+
+#gameBoard > tr > td > button {
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+}
+
+.flagged {
+    background-color: red;
+}
+
+.winningFlagged {
+    background-color: yellow;
+}
+
+.mine {
+    background-color: black;
+}
+
+.losingMine {
+    background-color: grey;
+}
+
+.blank {
+    background-color: lightgrey;
+    border-width: 1px;
+}
+
+.one {
+    color: blue;
+}
+
+.two {
+    color: green;
+}
+
+.three {
+    color: red;
+}
+
+.four {
+    color: darkblue;
+}
+
+.five {
+    color: maroon;
+}
+
+.six {
+    color: darkcyan;
+}
+
+.seven {
+    color: black;
+}
+
+.eight {
+    color: grey;
+}

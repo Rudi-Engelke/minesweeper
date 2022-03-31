@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script type="text/javascript" src="js/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css"></link>
+    </head>
+    <body>
+        <div id="game">
+            <div id="newGamePanel">
+                <form>
+                    Width:<input id="xSizeInput" name="xSize" type="number" value="10"/>
+                    Height:<input id="ySizeInput" name="ySize" type="number" value="10"/>
+                    Mines:<input id="mineCountInput" name="mineCount" type="number" value="10"/>
+                    <input type="button" onclick="onNewGameClicked()" value="New Game"/>
+                </form>
+            </div>
+            <div id="scorePanel">
+                <div id="time">X sec</div>
+                <div id="minesLeft"></div>
+            </div>
+            <div id="gamePanel"/>
+            <div id="messagePanel"/>
+        </div>
+    </body>
+</html>
